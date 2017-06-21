@@ -14,24 +14,17 @@ app.listen(3000, function(){
 });
 
 app.get('/', function(req, res){
+  res.render('index', { users: data.users});
+});
 
-  // res.render('index', {userName: data.users[0].username});
+app.get('/:username', function(req, res){
 
-  res.render('index', { users: data.users
+  let selectedUser = req.params.username;
 
-                      //  id: data.users[0].id,
-                      //  username: data.users[0].username,
-                      //  name: data.users[0].name,
-                      //  avatar: data.users[0].avatar,
-                      //  email: data.users[0].email,
-                      //  university: data.users[0].university,
-                      //  job: data.users[0].job,
-                      //  company: data.users[0].company,
-                      //  skills: data.users[0].skills,
-                      //  phone: data.users[0].phone,
-                      //  address: data.users[0].address
-                     }
-              );
-
-
+  for(let i = 0; i < data.users.length; i++){
+    if (data.users[i].username === selectedUser){
+      console.log("you did it");
+      res.render('users', { users: data.users[i]});
+    }
+  }
 });
