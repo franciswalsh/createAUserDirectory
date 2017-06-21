@@ -6,11 +6,12 @@
   </head>
   <body>
     {{#users}}
+    <h1>{{name}}</h1>
+    <div><img src="{{avatar}}"></div>
     <div>
       <ul>
-        <li><img src="{{avatar}}"></li>
-        <li>{{name}}</li>
-        <li>{{skills}}</li>
+        <li>Education: {{university}}</li>
+        <li>Skills: {{skills}}</li>
       </ul>
     </div>
     {{/users}}
