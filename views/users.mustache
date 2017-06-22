@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../secondary.css">
   </head>
   <body>
+    <div id="usersContainer">
     {{#users}}
     <h1>{{name}}</h1>
     <div><img src="{{avatar}}"></div>
@@ -15,5 +17,6 @@
       </ul>
     </div>
     {{/users}}
+  </div>
   </body>
 </html>

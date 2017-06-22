@@ -3,7 +3,9 @@ const express = require('express');
 const app = express();
 const mustacheExpress = require('mustache-express');
 
+
 // Register '.mustache' extension with The Mustache Express
+app.use(express.static(__dirname));
 app.engine('mustache', mustacheExpress());
 
 app.set('view engine', 'mustache');
